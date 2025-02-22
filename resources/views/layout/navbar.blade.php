@@ -1,31 +1,13 @@
-<nav class="bg-white shadow-md p-4">
+<nav class="bg-yellow-50 p-4">
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo -->
-        <a href="#" class="text-2xl font-bold">MySchool</a>
+        <a href="#" class="text-2xl font-bold">SMKN 1 RL</a>
 
         <!-- Links -->
         <div class="hidden md:flex space-x-6">
-            <a href="#" class="hover:text-blue-500 transition duration-300">Home</a>
-            <a href="#" class="hover:text-blue-500 transition duration-300">News</a>
-            <a href="#" class="hover:text-blue-500 transition duration-300">Showcase</a>
-
-            @auth
-                @if (auth()->user()->role === 'admin')
-                    <a href="#" class="hover:text-blue-500 transition duration-300">Admin Panel</a>
-                @endif
-
-                @if (in_array(auth()->user()->role, ['teacher', 'student']))
-                    <a href="#" class="hover:text-blue-500 transition duration-300">My Uploads</a>
-                @endif
-
-                <form method="POST" action="#" class="inline">
-                    @csrf
-                    <button type="submit" class="hover:text-red-500 transition duration-300">Logout</button>
-                </form>
-            @else
-                <a href="#" class="hover:text-blue-500 transition duration-300">Login</a>
-                <a href="#" class="hover:text-blue-500 transition duration-300">Register</a>
-            @endauth
+            <a href="#">Home</a>
+            <a href="#">News</a>
+            <a href="#">Showcase</a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -46,24 +28,6 @@
         <a href="#" class="block p-2">Home</a>
         <a href="#" class="block p-2">News</a>
         <a href="#" class="block p-2">Showcase</a>
-
-        @auth
-            @if (auth()->user()->role === 'admin')
-                <a href="#" class="block p-2">Admin Panel</a>
-            @endif
-
-            @if (in_array(auth()->user()->role, ['teacher', 'student']))
-                <a href="#" class="block p-2">My Uploads</a>
-            @endif
-
-            <form method="POST" action="#" class="p-2">
-                @csrf
-                <button type="submit" class="hover:text-red-500">Logout</button>
-            </form>
-        @else
-            <a href="#" class="block p-2">Login</a>
-            <a href="#" class="block p-2">Register</a>
-        @endauth
     </div>
 
     <script>

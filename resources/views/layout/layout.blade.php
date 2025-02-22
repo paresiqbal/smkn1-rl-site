@@ -22,7 +22,7 @@
     @stack('styles')
 </head>
 
-<body class="text-base antialiased font-normal transition-all duration-200">
+<body class="text-base antialiased font-normal transition-all bg-yellow-50 duration-200">
     <div class="flex flex-col w-full">
         <!-- Navbar -->
         @include('layout.navbar')
