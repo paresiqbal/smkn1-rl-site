@@ -10,6 +10,7 @@
     <div>
         <h1>Wellcome to SMK Negeri 1 Rejang Lebong</h1>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, voluptates?</p>
+        <a href="{{ route('admin.dashboard') }}">Go to Admin Dashboard</a>
     </div>
 </body>
 
