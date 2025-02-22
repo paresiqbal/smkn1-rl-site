@@ -1,17 +1,9 @@
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layout.layout')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SMK Negeri 1 Rejang Lebong</title>
-</head>
+@section('title', 'Homepage')
 
-<body>
+@section('content')
     <div>
-        <h1>Wellcome to SMK Negeri 1 Rejang Lebong</h1>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, voluptates?</p>
-        <a href="{{ route('admin.dashboard') }}">Go to Admin Dashboard</a>
+        <h1>Welcome to SMK Negeri 1 Rejang Lebong</h1>
     </div>
-</body>
-
-</html>
+@endsection
