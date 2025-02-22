@@ -43,7 +43,11 @@
         <a href="#" class="block p-2">Home</a>
         <a href="#" class="block p-2">News</a>
         <div class="relative">
-            <button class="block p-2 w-full text-left" id="showcase-mobile-toggle">Showcase</button>
+            <button class="block p-2 w-full text-left" id="showcase-mobile-toggle">Showcase <svg class="ml-1 w-4 h-4"
+                    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 9l6 6 6-6" />
+                </svg></button>
             <div id="showcase-mobile-dropdown" class="hidden bg-yellow-50 shadow-lg">
                 <a href="#" class="block px-4 py-2">Gallery</a>
                 <a href="#" class="block px-4 py-2">Projects</a>
