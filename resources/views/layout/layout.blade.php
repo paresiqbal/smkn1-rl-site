@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-bs-theme-mode="light">
 
 <head>
     <meta charset="UTF-8">
@@ -18,7 +18,8 @@
         rel="stylesheet">
 
     {{-- Vite --}}
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/js/theme.js'])
+
     @stack('styles')
 </head>
 
@@ -34,6 +35,7 @@
 
     </div>
     @stack('scripts')
+
 </body>
 
 </html>
