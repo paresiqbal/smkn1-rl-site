@@ -1,15 +1,20 @@
-@extends('layout.layout')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('title', 'Homepage')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
 
-@section('content')
+<body>
     <div class="container">
         <h2>Login</h2>
         <form method="POST" action="{{ route('show.login') }}">
             @csrf
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" value="{{ old('email') }}" class="form-control" required>
+                <input type="email" id="email" name="email" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
@@ -18,4 +23,6 @@
             <button type="submit" class="btn btn-primary">Login</button>
         </form>
     </div>
-@endsection
+</body>
+
+</html>

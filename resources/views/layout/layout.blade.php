@@ -24,18 +24,16 @@
 </head>
 
 <body class="text-base antialiased font-normal transition-all bg-yellow-50 duration-200">
-    <div class="flex flex-col w-full">
+    <div class="flex flex-col w-full min-h-screen">
         <!-- Navbar -->
         @include('layout.navbar')
 
         <!-- Main Content -->
-        <main class="flex-1 overflow-y-auto p-4 w-full">
+        <main class="flex-1 flex justify-center items-center p-4 w-full">
             @yield('content')
         </main>
-
     </div>
     @stack('scripts')
-
 </body>
 
 </html>
