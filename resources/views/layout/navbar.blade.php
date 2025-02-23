@@ -22,8 +22,8 @@
                     <a href="#" class="block px-4 py-2 text-black dark:text-white">Achievements</a>
                 </div>
             </div>
-            <a href="#">Login</a>
-            <a href="#">Register</a>
+            <a href="{{ route('show.login') }}">Login</a>
+            <a href="{{ route('show.register') }}">Register</a>
         </div>
 
         <!-- Theme Toggle Button -->
@@ -71,6 +71,8 @@
                 <a href="#" class="block px-4 py-2 text-black dark:text-white">Achievements</a>
             </div>
         </div>
+        <a href="{{ route('show.login') }}" class="block p-2 text-black dark:text-white">Login</a>
+        <a href="{{ route('show.register') }}" class="block p-2 text-black dark:text-white">Register</a>
     </div>
 
     <script>
