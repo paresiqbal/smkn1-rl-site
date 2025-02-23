@@ -40,6 +40,17 @@
                 class="h-12 w-full text-black border-2 border-black p-2.5 bg-yellow-300 shadow-[4px_4px_0px_rgba(0,0,0,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition">
                 Daftar
             </button>
+
+            {{-- validation error --}}
+            @if ($errors->any())
+                <div class="text-red-500 mt-4">
+                    <ul class="px-4 py-2">
+                        @foreach ($errors->all() as $error)
+                            <li class="text-sm">{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </form>
     </div>
 @endsection
