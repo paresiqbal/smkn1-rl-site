@@ -6,7 +6,7 @@
     <div
         class="container border-4 border-black p-6 w-full max-w-md shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] transition-all dark:border-white dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]">
         <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
-        <form method="POST" action="{{ route('show.login') }}">
+        <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="form-group mb-4">
                 <label for="email" class="block mb-2">Email:</label>
