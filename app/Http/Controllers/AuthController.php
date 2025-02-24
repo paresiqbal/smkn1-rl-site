@@ -38,7 +38,7 @@ class AuthController extends Controller
         $user = User::create($validate);
         Auth::login($user);
 
-        return redirect()->route('login');
+        return redirect()->route('show.login');
     }
 
     public function registerUser(Request $request)
@@ -54,7 +54,7 @@ class AuthController extends Controller
         $user = User::create($validate);
         Auth::login($user);
 
-        return redirect()->route('login');
+        return redirect()->route('show.login');
     }
 
     public function login(Request $request)
@@ -88,5 +88,7 @@ class AuthController extends Controller
 
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
+        redirect()->route('show.login');
     }
 }
