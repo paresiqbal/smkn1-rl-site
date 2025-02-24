@@ -8,7 +8,7 @@
 
     {{-- Metadata Link & Title --}}
     {{-- <link rel="icon" href="{{ asset('assets/img/abdsi-icon.png') }}" type="image/png"> --}}
-    <title>@yield('title') | SMK Negeri 1 Rejang Lebong</title>
+    <title> @yield('title') | SMK Negeri 1 Rejang Lebong</title>
 
     {{-- Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,19 +25,16 @@
 
 <body class="text-base antialiased font-normal transition-all bg-yellow-50 duration-200">
     <div class="flex flex-col w-full min-h-screen">
-        <div class="flex flex-1 w-full">
-            <!-- Sidebar with fixed width -->
-            <aside class="hidden lg:block w-64 bg-gray-100 p-4">
-                @include('admin.layout.sidebar')
-            </aside>
+        <!-- Sidebar -->
+        @include('admin.layout.sidebar')
 
-            <!-- Main Content covers remaining space -->
-            <main class="flex-1 p-4">
+        <!-- Main Content -->
+        <div class="lg:ml-64 pt-10 lg:pt-0 transition-all duration-300">
+            <main class="p-4">
                 @yield('content')
             </main>
         </div>
     </div>
-
     @stack('scripts')
 </body>
 
