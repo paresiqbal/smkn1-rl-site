@@ -19,3 +19,7 @@ Route::post('/register', [AuthController::class, 'Register'])->name('register');
 Route::name("admin.")->domain("admin." . env("APP_URL"))->group(function () {
     require __DIR__ . '/web/admin.php';
 });
+
+Route::name("community.")->domain("community." . env("APP_URL"))->group(function () {
+    require __DIR__ . '/web/community.php';
+});
