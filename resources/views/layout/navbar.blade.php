@@ -1,7 +1,7 @@
 <nav class="p-4">
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo -->
-        <a href="#" class="text-2xl font-bold text-black dark:text-white">SMKN 1 RL</a>
+        <a href="/" class="text-2xl font-bold text-black dark:text-white">SMKN 1 RL</a>
 
         <!-- Links -->
         <div class="hidden md:flex space-x-6">
@@ -20,7 +20,7 @@
                     <a href="#" class="block px-4 py-2 text-black dark:text-white">Fasilitas</a>
                 </div>
             </div>
-
+            <a href="{{ route('community.dashboard') }}">Komunitas</a>
 
         </div>
         <div class="flex items-center space-x-6">
