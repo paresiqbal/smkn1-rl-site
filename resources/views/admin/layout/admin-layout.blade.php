@@ -25,11 +25,11 @@
 
 <body class="text-base antialiased font-normal transition-all bg-yellow-50 duration-200">
     <div class="flex flex-col w-full min-h-screen">
-        <!-- Navbar -->
-        @include('layout.sidebar')
+        <!-- Sidebar -->
+        @include('admin.layout.sidebar')
 
         <!-- Main Content -->
-        <main class="flex-1 flex justify-center items-center p-4 w-full">
+        <main class="lg:ml-64 flex-1 flex justify-center items-center p-4 w-full transition-all duration-300">
             @yield('content')
         </main>
     </div>
