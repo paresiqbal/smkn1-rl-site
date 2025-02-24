@@ -9,6 +9,6 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
 });
 
 Route::middleware('auth')->controller(NewsController::class)->group(function () {
-    Route::get('/admin/news/create', 'create')->name('news.create');
-    Route::get('/admin/news', 'store')->name('news.store');
+    Route::get('/admin/news', 'showNews')->name('show.news');
+    Route::post('/admin/create-news', 'storeNews')->name('store.news');
 });

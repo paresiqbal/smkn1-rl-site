@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,7 @@ class NewsController extends Controller
     /**
      * Show the form for creating a new news post.
      */
-    public function create()
+    public function showNews()
     {
         return view('admin.news.index');
     }
@@ -19,7 +20,7 @@ class NewsController extends Controller
     /**
      * Store a newly created news post in storage.
      */
-    public function store(Request $request)
+    public function storeNews(Request $request)
     {
         // Validate incoming request
         $validated = $request->validate([
