@@ -1,5 +1,4 @@
 <section class="pt-8 lg:pt-24 overflow-hidden px-4 py-12 font-[family-name:var(--font-geist-sans)]">
-    <h2 class="text-sm text-muted-foreground">SAMBUTAN</h2>
     <div class="lg:flex lg:gap-10">
         <div class="flex-shrink-0">
             <img src="{{ asset('assets/asep2.png') }}" width="500" height="800" alt="Kepala Sekolah"
