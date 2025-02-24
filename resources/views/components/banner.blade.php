@@ -1,17 +1,22 @@
-<div class="pt-10 flex flex-col lg:flex-row items-center gap-4">
+<div class="pt-8 lg:pt-24 flex flex-col lg:flex-row items-center gap-6">
     <!-- Left Section (Text) -->
-    <div class="lg:w-1/2 space-y-4">
-        <h1 class="text-4xl font-bold">SMK Negeri 1 Rejang Lebong</h1>
-        <p class="text-lg text-balance">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat
+    <div class="lg:w-1/2 space-y-8">
+        <h1 class="text-4xl lg:text-7xl font-bold">SMK Negeri 1 Rejang Lebong</h1>
+        <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat
             dicta dolores dignissimos similique harum obcaecati eaque magnam libero perferendis laboriosam!</p>
         <div class="flex gap-4">
-            <button class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700">Pelajari Sekarang</button>
-            <button class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700">Daftar Sekarang</button>
+            <button
+                class="h-12 w-full text-black border-2 border-black dark:border-white p-2.5 bg-yellow-300 shadow-[4px_4px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition">Pelajari
+                Sekarang</button>
+            <button
+                class="h-12 w-full text-black border-2 border-black dark:border-white p-2.5 bg-red-400 shadow-[4px_4px_0px_rgba(0,0,0,1)] dark:shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition">Daftar
+                Sekarang</button>
         </div>
     </div>
 
     <!-- Right Section (Image) -->
     <div class="lg:w-1/2">
-        <img src="{{ asset('assets/school.jpg') }}" alt="sekolah" class="w-full rounded-lg shadow-lg">
+        <img src="{{ asset('assets/school.jpg') }}" alt="sekolah"
+            class="w-full shadow-[6px_6px_0px_rgba(0,0,0,1)] dark:border-white dark:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)]">
     </div>
 </div>
