@@ -1,7 +1,12 @@
-<div>
-    <h1>Dashboard</h1>
-    <p>Welcome to the admin dashboard</p>
-    <p>Here you can manage your website</p>
-    <p>Use the sidebar to navigate through the admin panel</p>
-    <p>Enjoy your stay!</p>
-</div>
+@extends('layout.layout')
+
+@section('title', 'Admin Dashboard')
+
+@section('content')
+    <div>
+        <h1>Welcome to Dashboard</h1>
+        <p class="text-balance">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam praesentium recusandae
+            assumenda accusamus necessitatibus sunt odio perferendis mollitia placeat illo.
+        </p>
+    </div>
+@endsection
