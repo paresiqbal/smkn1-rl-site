@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\News;
 use Illuminate\Http\Request;
+use App\Models\News;
+use App\Models\Tags;
 
 class NewsController extends Controller
 {
@@ -13,6 +14,13 @@ class NewsController extends Controller
         $news = News::with(['author', 'tags'])->orderBy('published_at', 'desc')->paginate(10);
 
         return view('admin.news.index', compact('news'));
+    }
+
+    public function showCreate()
+    {
+        // Retrieve all tags to allow assigning them to the news
+        $tags = Tags::all();
+        return view('admin.news.store', compact('tags'));
     }
 
     public function store(Request $request)
@@ -40,6 +48,6 @@ class NewsController extends Controller
             $news->tags()->sync($request->tags);
         }
 
-        return redirect()->route('admin.news')->with('success', 'News article created successfully.');
+        return redirect()->route('admin.show.news')->with('success', 'News article created successfully.');
     }
 }
