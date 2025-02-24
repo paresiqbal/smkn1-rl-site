@@ -29,7 +29,7 @@
         @include('layout.navbar')
 
         <!-- Main Content -->
-        <main class="flex-1 flex justify-center p-4 w-full lg:px-24">
+        <main class="flex-1 flex justify-center p-4 w-full lg:px-24 selection:bg-red-300 dark:selection:bg-orange-400">
             @yield('content')
         </main>
     </div>

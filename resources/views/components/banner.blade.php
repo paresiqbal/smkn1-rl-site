@@ -1,4 +1,4 @@
-<div class="pt-8 lg:pt-24 flex flex-col lg:flex-row items-center gap-6 selection:bg-red-300">
+<div class="pt-8 lg:pt-24 flex flex-col lg:flex-row items-center gap-6">
     <div class="lg:w-1/2 space-y-8">
         <h1 class="text-4xl lg:text-7xl font-bold">SMK Negeri 1 Rejang Lebong</h1>
         <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat
