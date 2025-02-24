@@ -4,7 +4,7 @@
 
 @section('content')
     <div>
-        <form method="POST" action="{{ route('admin.store.news') }}" enctype="multipart/form-data">
+        <form method="POST" enctype="multipart/form-data">
             @csrf
             <div>
                 <label for="title">Judul Berita</label>
