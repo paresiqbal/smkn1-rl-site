@@ -5,5 +5,6 @@
 @section('content')
     <div>
         @include('components.banner')
+        @include('components.detail')
     </div>
 @endsection
