@@ -1,4 +1,4 @@
-<nav class="p-4">
+<nav class="p-4 lg:px-0 lg:py-4 lg:mx-24">
     <div class="container mx-auto flex justify-between items-center">
         <!-- Logo -->
         <a href="/" class="text-2xl font-bold text-black dark:text-white">SMKN 1 RL</a>
