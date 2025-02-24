@@ -9,9 +9,11 @@ Route::get('/', function () {
 
 // auth
 Route::get('/register', [AuthController::class, 'showRegister'])->name('show.register');
-Route::get('/login', [AuthController::class, 'showLogin'])->name('show.login');
 Route::post('/register', [AuthController::class, 'Register'])->name('register');
+Route::get('/login', [AuthController::class, 'showLogin'])->name('show.login');
 Route::post('/login', [AuthController::class, 'Login'])->name('login');
+Route::get('/admin-register', [AuthController::class, 'showRegisterAdmin'])->name('show.register-admin');
+Route::post('/register', [AuthController::class, 'Register'])->name('register');
 
 
 Route::name("admin.")->domain("admin." . env("APP_URL"))->group(function () {

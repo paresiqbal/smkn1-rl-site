@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
+    public function showRegisterAdmin()
+    {
+        return view('auth.register-admin');
+    }
+
     public function showRegister()
     {
 
@@ -20,17 +25,33 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function register(Request $request)
+    public function registerAdmin(Request $request)
     {
         $validate = $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|confirmed',
-            'role' => 'required|string|in:admin,user',
         ]);
 
-        $user = User::create($validate);
+        $validate['role'] = 'admin';
 
+        $user = User::create($validate);
+        Auth::login($user);
+
+        return redirect()->route('login');
+    }
+
+    public function registerUser(Request $request)
+    {
+        $validate = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6|confirmed',
+        ]);
+
+        $validate['role'] = 'user';
+
+        $user = User::create($validate);
         Auth::login($user);
 
         return redirect()->route('login');
