@@ -24,6 +24,9 @@
             </div>
             <a href="{{ route('show.login') }}">Login</a>
             <a href="{{ route('show.register') }}">Register</a>
+            <form action="{{ route('logout') }}" method="POST">
+                <button>Logout</button>
+            </form>
         </div>
 
         <!-- Theme Toggle Button -->
