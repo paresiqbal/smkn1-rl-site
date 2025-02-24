@@ -9,9 +9,9 @@ Route::get('/', function () {
 
 // auth
 Route::get('/register', [AuthController::class, 'showRegister'])->name('show.register');
-Route::post('/register', [AuthController::class, 'Register'])->name('register');
+Route::post('/register', [AuthController::class, 'registerUser'])->name('register');
 Route::get('/login', [AuthController::class, 'showLogin'])->name('show.login');
-Route::post('/login', [AuthController::class, 'Login'])->name('login');
+Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::get('/register-admin', [AuthController::class, 'showRegisterAdmin'])->name('show.register-admin');
 Route::post('/register-admin', [AuthController::class, 'registerAdmin'])->name('register-admin');
 
