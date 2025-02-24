@@ -56,4 +56,12 @@ class User extends Authenticatable
     {
         return $this->role === 'user';
     }
+
+    /**
+     * Get the news items (articles) authored by the user.
+     */
+    public function news()
+    {
+        return $this->hasMany(News::class, 'author_id');
+    }
 }
