@@ -12,8 +12,8 @@ Route::get('/register', [AuthController::class, 'showRegister'])->name('show.reg
 Route::post('/register', [AuthController::class, 'Register'])->name('register');
 Route::get('/login', [AuthController::class, 'showLogin'])->name('show.login');
 Route::post('/login', [AuthController::class, 'Login'])->name('login');
-Route::get('/admin-register', [AuthController::class, 'showRegisterAdmin'])->name('show.register-admin');
-Route::post('/register', [AuthController::class, 'Register'])->name('register');
+Route::get('/register-admin', [AuthController::class, 'showRegisterAdmin'])->name('show.register-admin');
+Route::post('/register-admin', [AuthController::class, 'registerAdmin'])->name('register-admin');
 
 
 Route::name("admin.")->domain("admin." . env("APP_URL"))->group(function () {
