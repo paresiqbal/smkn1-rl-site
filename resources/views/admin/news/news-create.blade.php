@@ -47,6 +47,7 @@
 
                 <button type="submit">Upload News</button>
             </form>
+
         </div>
     </div>
 @endsection

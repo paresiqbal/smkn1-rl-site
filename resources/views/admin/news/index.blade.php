@@ -27,36 +27,3 @@
         </div>
     </div>
 @endsection
-
-@push('scripts')
-    <script>
-        document.addEventListener("trix-attachment-add", function(event) {
-            if (event.attachment.file) {
-                uploadImage(event.attachment);
-            }
-        });
-
-        function uploadImage(attachment) {
-            let formData = new FormData();
-            formData.append('image', attachment.file);
-
-            fetch('{{ route('admin.upload.image') }}', {
-                    method: 'POST',
-                    body: formData,
-                    headers: {
-                        'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                    }
-                })
-                .then(response => response.json())
-                .then(data => {
-                    attachment.setAttributes({
-                        url: data.url,
-                        href: data.url
-                    });
-                })
-                .catch(error => {
-                    console.error('Upload failed:', error);
-                });
-        }
-    </script>
-@endpush
