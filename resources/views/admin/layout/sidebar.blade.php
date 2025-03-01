@@ -1,6 +1,6 @@
 <!-- Mobile menu button -->
 <button type="button" id="burger-menu"
-    class="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md text-gray-500 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+    class="lg:hidden fixed top-4 left-4 z-50 p-2 rounded-md text-gray-500 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
     onclick="toggleSidebar()">
     <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -9,15 +9,16 @@
 
 <!-- Sidebar -->
 <aside id="sidebar"
-    class="fixed inset-y-0 left-0 z-40 w-64 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col">
+    class="fixed inset-y-0 left-0 z-40 w-64 transform -translate-x-full lg:translate-x-0 transition-transform duration-300 ease-in-out bg-white dark:bg-zinc-800 border-r border-gray-200 dark:border-gray-700 flex flex-col">
     <!-- Logo -->
     <div class="flex items-center justify-between h-16 px-4 border-b border-gray-200 dark:border-gray-700">
-        <div class="flex items-center">
+        <a class="flex items-center gap-2" href="/">
+            <img src="{{ asset('assets/blud.png') }}" alt="Logo" class="h-8 w-auto">
             <span class="text-xl font-semibold text-gray-800 dark:text-white">SMKN 1 RL</span>
-        </div>
+        </a>
         <!-- Mobile close button -->
         <button type="button"
-            class="lg:hidden p-2 rounded-md text-gray-500 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-gray-300 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+            class="lg:hidden p-2 rounded-md hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
             onclick="toggleSidebar()">
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
@@ -29,15 +30,13 @@
     <nav class="flex-1 px-2 py-4 space-y-1 overflow-y-auto">
         <!-- Theme Toggle Button -->
         <button
-            class="flex w-full items-center px-4 py-2 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-lg group transition-colors duration-200"
+            class="flex w-full items-center px-4 py-2 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 rounded-lg group transition-colors duration-200"
             id="theme-toggle">
-            <!-- Sun Icon -->
             <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-5 h-5 mr-3">
                 <path stroke-linecap="round" stroke-linejoin="round"
                     d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
             </svg>
-            <!-- Moon Icon -->
             <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                 stroke="currentColor" class="w-5 h-5 mr-3 hidden">
                 <path stroke-linecap="round" stroke-linejoin="round"
@@ -47,37 +46,28 @@
         </button>
 
         <!-- Dashboard -->
-        <a href="#"
-            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-lg group transition-colors duration-200">
-            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        <a href="{{ route('admin.dashboard') }}"
+            class="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 rounded-lg group transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                <path fill-rule="evenodd"
+                    d="M9.293 2.293a1 1 0 0 1 1.414 0l7 7A1 1 0 0 1 17 11h-1v6a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-6H3a1 1 0 0 1-.707-1.707l7-7Z"
+                    clip-rule="evenodd" />
             </svg>
             <span>Dashboard</span>
         </a>
 
-        <!-- Users -->
-        <a href="#"
-            class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-lg group transition-colors duration-200">
-            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-            </svg>
-            <span>Users</span>
-        </a>
-
-        <!-- Settings -->
+        <!-- Article -->
         <div class="space-y-1">
             <button type="button"
-                class="flex items-center w-full px-4 py-2 text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-lg group transition-colors duration-200"
+                class="flex items-center w-full px-4 gap-3 py-2 hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 rounded-lg group transition-colors duration-200"
                 onclick="this.querySelector('.arrow').classList.toggle('rotate-90'); this.nextElementSibling.classList.toggle('hidden')">
-                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="size-5">
+                    <path fill-rule="evenodd"
+                        d="M2 3.5A1.5 1.5 0 0 1 3.5 2h9A1.5 1.5 0 0 1 14 3.5v11.75A2.75 2.75 0 0 0 16.75 18h-12A2.75 2.75 0 0 1 2 15.25V3.5Zm3.75 7a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5Zm0 3a.75.75 0 0 0 0 1.5h4.5a.75.75 0 0 0 0-1.5h-4.5ZM5 5.75A.75.75 0 0 1 5.75 5h4.5a.75.75 0 0 1 .75.75v2.5a.75.75 0 0 1-.75.75h-4.5A.75.75 0 0 1 5 8.25v-2.5Z"
+                        clip-rule="evenodd" />
+                    <path d="M16.5 6.5h-1v8.75a1.25 1.25 0 1 0 2.5 0V8a1.5 1.5 0 0 0-1.5-1.5Z" />
                 </svg>
-                <span>Settings</span>
+                <span>Artikel</span>
                 <svg class="arrow w-5 h-5 ml-auto transform transition-transform duration-200" fill="none"
                     stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -86,16 +76,16 @@
             <!-- Submenu -->
             <div class="hidden pl-10 space-y-1">
                 <a href="#"
-                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200">
-                    Profile
+                    class="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                    Berita
                 </a>
                 <a href="#"
-                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200">
-                    Security
+                    class="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                    Pengumuman
                 </a>
                 <a href="#"
-                    class="flex items-center px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200">
-                    Notifications
+                    class="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                    Agenda
                 </a>
             </div>
         </div>
@@ -118,8 +108,7 @@
                         Guest User
                     </p>
                     <p class="text-xs text-gray-500 dark:text-gray-400 truncate">
-                        <a href="{{ route('show.login') }}">Login</a> or <a
-                            href="{{ route('show.register') }}">Register</a>
+                        <a href="{{ route('show.login') }}">Login</a> or <a href="{{ route('show.register') }}">Register</a>
                     </p>
                 @endauth
             </div>
@@ -127,7 +116,7 @@
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button type="submit"
-                        class="p-2 text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-gray-300">
+                        class="p-2 text-gray-500 hover:text-gray-600 dark:text-gray-400 dark:hover:text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
