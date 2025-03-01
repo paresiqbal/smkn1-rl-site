@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     {{-- Metadata Link & Title --}}
-    <link rel="icon" href="{{ asset('assets/blud.png') }}" type="image/png">
+    {{-- <link rel="icon" href="{{ asset('assets/img/abdsi-icon.png') }}" type="image/png"> --}}
     <title> @yield('title') | SMK Negeri 1 Rejang Lebong</title>
 
     {{-- Fonts --}}
