@@ -9,14 +9,17 @@ use Illuminate\Support\Facades\Auth;
 
 class NewsController extends Controller
 {
-    /**
-     * Show the form for creating a new news post.
-     */
     public function showNews()
     {
         $news = News::orderBy('date', 'desc')->get();
 
         return view('admin.news.index', compact('news'));
+    }
+
+    public function showStoreNews()
+    {
+
+        return view('admin.news.news-create');
     }
 
     /**

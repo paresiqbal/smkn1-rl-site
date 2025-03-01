@@ -11,6 +11,7 @@ Route::middleware('auth')->controller(DashboardController::class)->group(functio
 
 Route::middleware('auth')->controller(NewsController::class)->group(function () {
     Route::get('/admin/news', 'showNews')->name('show.news');
+    Route::get('/admin/create-news', 'showStoreNews')->name('show.create-news');
     Route::post('/admin/create-news', 'storeNews')->name('store.news');
 });
 
