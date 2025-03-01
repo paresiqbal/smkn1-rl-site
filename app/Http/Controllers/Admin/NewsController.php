@@ -14,7 +14,9 @@ class NewsController extends Controller
      */
     public function showNews()
     {
-        return view('admin.news.index');
+        // Retrieve all news ordered by date descending
+        $news = News::orderBy('date', 'desc')->get();
+        return view('admin.news.index', compact('news'));
     }
 
     /**
