@@ -15,6 +15,7 @@ class News extends Model
         'content',
         'date',
         'user_id',
+        'image',
     ];
 
     /**

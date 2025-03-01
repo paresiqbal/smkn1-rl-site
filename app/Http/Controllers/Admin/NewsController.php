@@ -14,8 +14,8 @@ class NewsController extends Controller
      */
     public function showNews()
     {
-        // Retrieve all news ordered by date descending
         $news = News::orderBy('date', 'desc')->get();
+
         return view('admin.news.index', compact('news'));
     }
 
@@ -24,21 +24,27 @@ class NewsController extends Controller
      */
     public function storeNews(Request $request)
     {
-        // Validate incoming request
         $validated = $request->validate([
             'title'   => 'required|string|max:255',
             'content' => 'required|string',
             'date'    => 'required|date',
+            'image'   => 'nullable|image|max:3048',
         ]);
+
+        $imagePath = null;
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('news_images', 'public');
+        }
 
         News::create([
             'title'   => $validated['title'],
             'content' => $validated['content'],
             'date'    => $validated['date'],
             'user_id' => Auth::id(),
+            'image'   => $imagePath,
         ]);
 
-        // Redirect or return response as needed
+
         return redirect()->back()->with('success', 'News created successfully!');
     }
 }

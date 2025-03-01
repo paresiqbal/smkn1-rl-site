@@ -14,8 +14,9 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->text('content');
-            $table->date('date'); // publication date for the news
-            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // associates news with a user (the author)
+            $table->date('date');
+            $table->string('image')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
