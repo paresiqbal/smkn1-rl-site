@@ -13,17 +13,12 @@ class ImageUploadController extends Controller
      */
     public function uploadImage(Request $request)
     {
-        $request->validate([
-            'image' => 'required|image|max:2048',
-        ]);
+        $request->validate(['image' => 'required|image|max:3048']);
 
-        $path = $request->file('image')->store('news_images', 'public');
-
-        $url = Storage::url($path);
+        $imagePath = $request->file('image')->store('news_images', 'public');
 
         return response()->json([
-            'success' => true,
-            'url' => $url,
+            'url' => asset('storage/' . $imagePath),
         ]);
     }
 }
