@@ -29,12 +29,11 @@ class NewsController extends Controller
             'date'    => 'required|date',
         ]);
 
-        // Create the news item and associate with the currently logged in user
         News::create([
             'title'   => $validated['title'],
             'content' => $validated['content'],
             'date'    => $validated['date'],
-            'user_id' => Auth::id(),  // assumes authentication middleware is used
+            'user_id' => Auth::id(),
         ]);
 
         // Redirect or return response as needed
