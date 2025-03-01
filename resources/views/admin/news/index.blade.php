@@ -32,14 +32,16 @@
                 </div>
                 <br>
 
-                {{-- Updated Quill editor container --}}
-                <div id="editor">
-                    {{-- This will be controlled by Quill --}}
-                </div>
-                <br>
-
                 {{-- Hidden textarea to submit the content --}}
-                <textarea name="content" id="content" style="display:none;">{{ old('content') }}</textarea>
+                <div>
+                    <label for="content">Content:</label>
+
+                    <!-- Hidden input to store content (this is required for Trix to work properly) -->
+                    <input id="content" type="hidden" name="content" value="{{ old('content') }}">
+
+                    <!-- Trix Editor (must reference the hidden input via "input" attribute) -->
+                    <trix-editor input="content" class="trix-content"></trix-editor>
+                </div>
                 <br>
 
                 <div>
@@ -58,88 +60,10 @@
             @foreach ($news as $newsItem)
                 <div class="news-item no-tailwindcss-base" style="margin-bottom: 20px;">
                     <h3>{{ $newsItem->title }}</h3>
-                    <div class="ql-editor">{!! $newsItem->content !!}</div>
+                    <div class="trix-content">{!! $newsItem->content !!}</div>
                     <small>{{ $newsItem->date }}</small>
                 </div>
             @endforeach
         </div>
-
     </div>
-
-    <!-- Include the Quill library -->
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
-
-    <script>
-        const toolbarOptions = [
-            ['bold', 'italic', 'underline', 'strike'],
-            ['blockquote', 'code-block'],
-            ['link', 'image', 'video', 'formula'],
-
-            [{
-                'header': 1
-            }, {
-                'header': 2
-            }],
-            [{
-                'list': 'ordered'
-            }, {
-                'list': 'bullet'
-            }, {
-                'list': 'check'
-            }],
-            [{
-                'script': 'sub'
-            }, {
-                'script': 'super'
-            }],
-            [{
-                'indent': '-1'
-            }, {
-                'indent': '+1'
-            }],
-            [{
-                'direction': 'rtl'
-            }],
-
-            [{
-                'size': ['small', false, 'large', 'huge']
-            }],
-            [{
-                'header': [1, 2, 3, 4, 5, 6, false]
-            }],
-
-            [{
-                'color': []
-            }, {
-                'background': []
-            }],
-
-            [{
-                'align': []
-            }],
-
-            ['clean']
-        ];
-
-        // Initialize Quill
-        const quill = new Quill('#editor', {
-            modules: {
-                toolbar: toolbarOptions
-            },
-            theme: 'snow'
-        });
-
-        // Load old content, if any, into Quill
-        const contentField = document.getElementById('content');
-        if (contentField.value) {
-            quill.root.innerHTML = contentField.value;
-        }
-
-        // Before form submission, copy Quill content into hidden textarea
-        document.getElementById('newsForm').addEventListener('submit', function(e) {
-            contentField.value = quill.root.innerHTML;
-        });
-    </script>
-
-
 @endsection
