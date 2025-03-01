@@ -75,7 +75,7 @@
             </button>
             <!-- Submenu -->
             <div class="hidden pl-10 space-y-1">
-                <a href="{{ route('admin.show.news') }}"
+                <a href="#"
                     class="flex items-center px-4 py-2 text-sm hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700 rounded-lg transition-colors duration-200">
                     Berita
                 </a>
