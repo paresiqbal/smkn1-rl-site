@@ -2,9 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use Inertia\Inertia;
 
 Route::get('/', function () {
-    return inertia('Home');
+    return Inertia::render('Home');
 });
 
 // auth
