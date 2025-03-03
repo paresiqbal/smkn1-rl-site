@@ -1,21 +1,27 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const themeToggle = document.getElementById("theme-toggle");
-    const currentTheme = localStorage.getItem("theme") || "light";
-
-    if (currentTheme === "dark") {
-        document.body.classList.add("bg-zinc-900", "text-white");
-        document.body.classList.remove("bg-yellow-50", "text-black");
+function setThemeOnLoad() {
+    if (
+        localStorage.theme === "dark" ||
+        ("theme" in localStorage &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+        document.documentElement.classList.add("dark");
+    } else {
+        document.documentElement.classList.remove("dark");
     }
+}
 
-    themeToggle.addEventListener("click", function () {
-        document.body.classList.toggle("bg-zinc-900");
-        document.body.classList.toggle("text-white");
-        document.body.classList.toggle("bg-yellow-50");
-        document.body.classList.toggle("text-black");
+function switchTheme() {
+    if (
+        localStorage.theme === "dark" ||
+        ("theme" in localStorage &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+        document.documentElement.classList.remove("dark");
+        localStorage.theme = "light";
+    } else {
+        document.documentElement.classList.add("dark");
+        localStorage.theme = "dark";
+    }
+}
 
-        const theme = document.body.classList.contains("bg-zinc-900")
-            ? "dark"
-            : "light";
-        localStorage.setItem("theme", theme);
-    });
-});
+export { setThemeOnLoad, switchTheme };

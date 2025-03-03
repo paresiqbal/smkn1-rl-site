@@ -10,7 +10,7 @@
     @inertiaHead
 </head>
 
-<body>
+<body class="bg-yellow-50 dark:bg-zinc-900 dark:text-white">
     @inertia
 </body>
 
