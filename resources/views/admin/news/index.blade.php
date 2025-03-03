@@ -8,19 +8,24 @@
             <!-- Add button to go to news creation page -->
             <a href="{{ route('admin.show.create-news') }}" class="btn btn-primary mb-3">Create News</a>
 
-            <!-- Display news below the form -->
-            <div class="container mt-5">
-                <h2>News List</h2>
+            <!-- Modified news display as smaller cards -->
+            <h2>News List</h2>
+            <div class="row">
                 @foreach ($news as $newsItem)
-                    <div class="news-item no-tailwindcss-base" style="margin-bottom: 20px;">
-                        <h3>{{ $newsItem->title }}</h3>
-
-                        @if ($newsItem->image)
-                            <img src="{{ asset('storage/' . $newsItem->image) }}" alt="News Image" class="w-64 h-auto mt-2">
-                        @endif
-
-                        <div class="trix-content">{!! $newsItem->content !!}</div>
-                        <small>{{ $newsItem->date }}</small>
+                    <div class="col-md-3 col-sm-6 mb-4">
+                        <div class="card p-2">
+                            @if ($newsItem->image)
+                                <img src="{{ asset('storage/' . $newsItem->image) }}" class="card-img-top img-fluid"
+                                    alt="News Image">
+                            @endif
+                            <div class="card-body p-2">
+                                <h5 class="card-title small">{{ $newsItem->title }}</h5>
+                                <div class="trix-content small">{!! $newsItem->content !!}</div>
+                                <p class="card-text">
+                                    <small class="text-muted">{{ $newsItem->date }}</small>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 @endforeach
             </div>
