@@ -38,7 +38,6 @@ const Navbar = ({ authUser }) => {
                 {/* Links */}
                 <div className="hidden md:flex space-x-6">
                     <a href="#">Artikel</a>
-                    <Link href="/admin/dashboard">Go to Admin Dashboard</Link>
                     <div className="relative group">
                         <a
                             href="#"
@@ -73,25 +72,12 @@ const Navbar = ({ authUser }) => {
                         >
                             <a
                                 href="#"
-                                className="block px-4 py-2 text-black dark:text-white"
+                                className="block px-8 py-2 text-black dark:text-white"
                             >
-                                Visi & Misi
-                            </a>
-                            <a
-                                href="#"
-                                className="block px-4 py-2 text-black dark:text-white"
-                            >
-                                Sejarah
-                            </a>
-                            <a
-                                href="#"
-                                className="block px-4 py-2 text-black dark:text-white"
-                            >
-                                Fasilitas
+                                Visi&Misi
                             </a>
                         </div>
                     </div>
-                    <a href="/community/dashboard">Komunitas</a>
                 </div>
                 <div className="flex items-center space-x-6">
                     {/* Theme Toggle Button */}
