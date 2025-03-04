@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash; // added import
 use Inertia\Inertia;
 
 class AuthController extends Controller
@@ -34,6 +35,8 @@ class AuthController extends Controller
             'password' => 'required|min:6|confirmed',
         ]);
 
+        // Hash the password before saving
+        $validate['password'] = Hash::make($validate['password']);
         $validate['role'] = 'admin';
 
         $user = User::create($validate);
