@@ -8,7 +8,9 @@ import { setThemeOnLoad } from "./theme";
 
 createInertiaApp({
     resolve: (name) => {
-        const pages = import.meta.glob("./Pages/**/*.jsx", { eager: true });
+        const pages = import.meta.glob("./Pages/**/*.{jsx,tsx}", {
+            eager: true,
+        });
         const page = pages[`./Pages/${name}.jsx`];
         page.default.layout =
             page.default.layout || ((page) => <MainLayout>{page}</MainLayout>);

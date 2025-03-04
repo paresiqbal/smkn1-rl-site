@@ -38,6 +38,7 @@ const Navbar = ({ authUser }) => {
                 {/* Links */}
                 <div className="hidden md:flex space-x-6">
                     <a href="#">Artikel</a>
+                    <Link href="/admin/dashboard">Go to Admin Dashboard</Link>
                     <div className="relative group">
                         <a
                             href="#"
@@ -145,8 +146,8 @@ const Navbar = ({ authUser }) => {
                         </>
                     ) : (
                         <>
-                            <a href="/login">Login</a>
-                            <a href="/register">Register</a>
+                            <a href="/auth/login">Login</a>
+                            <a href="/auth/register">Register</a>
                         </>
                     )}
                 </div>
@@ -273,13 +274,13 @@ const Navbar = ({ authUser }) => {
                 ) : (
                     <>
                         <a
-                            href="/login"
+                            href="/auth/login"
                             className="block p-2 text-black dark:text-white"
                         >
                             Login
                         </a>
                         <a
-                            href="/register"
+                            href="/auth/register"
                             className="block p-2 text-black dark:text-white"
                         >
                             Register
