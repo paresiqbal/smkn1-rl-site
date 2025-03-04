@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+// lib
+import { useState, useEffect } from "react";
+import { Link } from "@inertiajs/react";
 
 const Navbar = ({ authUser }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -26,12 +28,12 @@ const Navbar = ({ authUser }) => {
         <nav className="p-4 lg:px-0 lg:py-4 lg:mx-24">
             <div className="container mx-auto flex justify-between items-center">
                 {/* Logo */}
-                <a
+                <Link
                     href="/"
                     className="text-2xl font-bold text-black dark:text-white"
                 >
                     SMKN 1 RL
-                </a>
+                </Link>
 
                 {/* Links */}
                 <div className="hidden md:flex space-x-6">
