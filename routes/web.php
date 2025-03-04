@@ -14,7 +14,7 @@ Route::get('/admin/dashboard', function () {
 
 // auth
 Route::middleware('guest')->controller(AuthController::class)->group(function () {
-    Route::get('/register-admin', 'showRegisterAdmin')->name('show.register.admin');
+    Route::get('/auth/register-admin', 'showRegisterAdmin')->name('show.register.admin');
     Route::post('/register-admin', 'registerAdmin')->name('register.admin');
     Route::get('/auth/register', 'showRegister')->name('show.register');
     Route::post('/register', 'registerUser')->name('register');

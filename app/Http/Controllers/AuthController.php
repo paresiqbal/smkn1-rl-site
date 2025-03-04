@@ -11,7 +11,7 @@ class AuthController extends Controller
 {
     public function showRegisterAdmin()
     {
-        return view('auth.register-admin');
+        return Inertia::render('Auth/RegisterAdmin');
     }
 
     public function showRegister()
