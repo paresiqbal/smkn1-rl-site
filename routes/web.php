@@ -8,10 +8,6 @@ Route::get('/', function () {
     return Inertia::render('Home');
 });
 
-Route::get('/admin/dashboard', function () {
-    return Inertia::render('Admin/Dashboard');
-})->name('admin.dashboard');
-
 // auth
 Route::middleware('guest')->controller(AuthController::class)->group(function () {
     Route::get('/auth/register-admin', 'showRegisterAdmin')->name('show.register.admin');
@@ -24,7 +20,7 @@ Route::middleware('guest')->controller(AuthController::class)->group(function ()
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
-Route::name("admin.")->domain("admin." . env("APP_URL"))->group(function () {
+Route::name('admin.')->domain('admin.' . env('APP_URL'))->group(function () {
     require __DIR__ . '/web/admin.php';
 });
 
